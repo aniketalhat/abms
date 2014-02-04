@@ -1,0 +1,15 @@
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\bin\Release\Anupam.exe.config
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Release\Anupam.vbproj.ResolveComReference.cache
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\bin\Release\Adata.mdb
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\bin\Release\Anupam.exe
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\bin\Release\Anupam.pdb
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\bin\Release\Anupam.xml
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Release\Anupam.Form1.resources
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Release\Anupam.Form2.resources
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Release\Anupam.Resources.resources
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Release\GenerateResource-ResGen.read.1.tlog
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Release\GenerateResource-ResGen.write.1.tlog
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Release\Anupam.exe
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Release\Anupam.xml
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Release\Anupam.pdb

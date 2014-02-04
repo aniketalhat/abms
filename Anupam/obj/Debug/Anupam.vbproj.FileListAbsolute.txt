@@ -1,0 +1,14 @@
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\bin\Debug\Adata.mdb
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\bin\Debug\Anupam.exe.config
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\bin\Debug\Anupam.exe
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\bin\Debug\Anupam.pdb
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\bin\Debug\Anupam.xml
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Debug\Anupam.vbproj.ResolveComReference.cache
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Debug\Anupam.Form1.resources
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Debug\Anupam.Resources.resources
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Debug\Anupam.vbproj.GenerateResource.Cache
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Debug\Anupam.exe
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Debug\Anupam.xml
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Debug\Anupam.pdb
+C:\Users\Aniket\Documents\Visual Studio 2008\Projects\Anupam\Anupam\obj\Debug\Anupam.Form2.resources
