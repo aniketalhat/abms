@@ -737,6 +737,10 @@ Partial Public Class AdataDataSet
         
         Private _columnCONTACT_NUM As Global.System.Data.DataColumn
         
+        Private _columnVAT_NUM As Global.System.Data.DataColumn
+        
+        Private columnEMAIL As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -829,6 +833,22 @@ Partial Public Class AdataDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property _VAT_NUMColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me._columnVAT_NUM
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property EMAILColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEMAIL
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -865,9 +885,9 @@ Partial Public Class AdataDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddatableRow(ByVal SRNO As Integer, ByVal _PARTY_CODE As String, ByVal _VENDOR_NUM As String, ByVal _PARTY_NAME As String, ByVal _PARTY_ADDR As String, ByVal _CLIENT_NAME As String, ByVal _CONTACT_NUM As String) As atableRow
+        Public Overloads Function AddatableRow(ByVal SRNO As Integer, ByVal _PARTY_CODE As String, ByVal _VENDOR_NUM As String, ByVal _PARTY_NAME As String, ByVal _PARTY_ADDR As String, ByVal _CLIENT_NAME As String, ByVal _CONTACT_NUM As String, ByVal _VAT_NUM As String, ByVal EMAIL As String) As atableRow
             Dim rowatableRow As atableRow = CType(Me.NewRow,atableRow)
-            Dim columnValuesArray() As Object = New Object() {SRNO, _PARTY_CODE, _VENDOR_NUM, _PARTY_NAME, _PARTY_ADDR, _CLIENT_NAME, _CONTACT_NUM}
+            Dim columnValuesArray() As Object = New Object() {SRNO, _PARTY_CODE, _VENDOR_NUM, _PARTY_NAME, _PARTY_ADDR, _CLIENT_NAME, _CONTACT_NUM, _VAT_NUM, EMAIL}
             rowatableRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowatableRow)
             Return rowatableRow
@@ -909,6 +929,8 @@ Partial Public Class AdataDataSet
             Me._columnPARTY_ADDR = MyBase.Columns("PARTY-ADDR")
             Me._columnCLIENT_NAME = MyBase.Columns("CLIENT-NAME")
             Me._columnCONTACT_NUM = MyBase.Columns("CONTACT-NUM")
+            Me._columnVAT_NUM = MyBase.Columns("VAT-NUM")
+            Me.columnEMAIL = MyBase.Columns("EMAIL")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -940,6 +962,12 @@ Partial Public Class AdataDataSet
             Me._columnCONTACT_NUM.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnCONTACT_NUM")
             Me._columnCONTACT_NUM.ExtendedProperties.Add("Generator_UserColumnName", "CONTACT-NUM")
             MyBase.Columns.Add(Me._columnCONTACT_NUM)
+            Me._columnVAT_NUM = New Global.System.Data.DataColumn("VAT-NUM", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me._columnVAT_NUM.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnVAT_NUM")
+            Me._columnVAT_NUM.ExtendedProperties.Add("Generator_UserColumnName", "VAT-NUM")
+            MyBase.Columns.Add(Me._columnVAT_NUM)
+            Me.columnEMAIL = New Global.System.Data.DataColumn("EMAIL", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEMAIL)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me._columnPARTY_CODE}, true))
             Me._columnPARTY_CODE.AllowDBNull = false
             Me._columnPARTY_CODE.Unique = true
@@ -949,6 +977,8 @@ Partial Public Class AdataDataSet
             Me._columnPARTY_ADDR.MaxLength = 255
             Me._columnCLIENT_NAME.MaxLength = 255
             Me._columnCONTACT_NUM.MaxLength = 255
+            Me._columnVAT_NUM.MaxLength = 255
+            Me.columnEMAIL.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1477,6 +1507,36 @@ Partial Public Class AdataDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property _VAT_NUM() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableatable._VAT_NUMColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'VAT-NUM' in table 'atable' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableatable._VAT_NUMColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property EMAIL() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableatable.EMAILColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'EMAIL' in table 'atable' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableatable.EMAILColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsSRNONull() As Boolean
             Return Me.IsNull(Me.tableatable.SRNOColumn)
         End Function
@@ -1545,6 +1605,30 @@ Partial Public Class AdataDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Set_CONTACT_NUMNull()
             Me(Me.tableatable._CONTACT_NUMColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Is_VAT_NUMNull() As Boolean
+            Return Me.IsNull(Me.tableatable._VAT_NUMColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Set_VAT_NUMNull()
+            Me(Me.tableatable._VAT_NUMColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsEMAILNull() As Boolean
+            Return Me.IsNull(Me.tableatable.EMAILColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetEMAILNull()
+            Me(Me.tableatable.EMAILColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2277,6 +2361,8 @@ Namespace AdataDataSetTableAdapters
             tableMapping.ColumnMappings.Add("PARTY-ADDR", "PARTY-ADDR")
             tableMapping.ColumnMappings.Add("CLIENT-NAME", "CLIENT-NAME")
             tableMapping.ColumnMappings.Add("CONTACT-NUM", "CONTACT-NUM")
+            tableMapping.ColumnMappings.Add("VAT-NUM", "VAT-NUM")
+            tableMapping.ColumnMappings.Add("EMAIL", "EMAIL")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -2284,7 +2370,8 @@ Namespace AdataDataSetTableAdapters
                 "code` = ?) AND ((? = 1 AND `v_code` IS NULL) OR (`v_code` = ?)) AND ((? = 1 AND "& _ 
                 "`p_name` IS NULL) OR (`p_name` = ?)) AND ((? = 1 AND `p_addr` IS NULL) OR (`p_ad"& _ 
                 "dr` = ?)) AND ((? = 1 AND `client_name` IS NULL) OR (`client_name` = ?)) AND ((?"& _ 
-                " = 1 AND `ctct` IS NULL) OR (`ctct` = ?)))"
+                " = 1 AND `ctct` IS NULL) OR (`ctct` = ?)) AND ((? = 1 AND `vat_num` IS NULL) OR "& _ 
+                "(`vat_num` = ?)) AND ((? = 1 AND `email` IS NULL) OR (`email` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_SRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SRNO", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_SRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SRNO", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -2299,10 +2386,14 @@ Namespace AdataDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CLIENT-NAME", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CLIENT-NAME", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_CONTACT-NUM", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CONTACT-NUM", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CONTACT-NUM", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CONTACT-NUM", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_VAT-NUM", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "VAT-NUM", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_VAT-NUM", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "VAT-NUM", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_EMAIL", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EMAIL", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_EMAIL", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EMAIL", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `atable` (`srno`, `p_code`, `v_code`, `p_name`, `p_addr`, `client_nam"& _ 
-                "e`, `ctct`) VALUES (?, ?, ?, ?, ?, ?, ?)"
+                "e`, `ctct`, `vat_num`, `email`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SRNO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PARTY-CODE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PARTY-CODE", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -2311,14 +2402,18 @@ Namespace AdataDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PARTY-ADDR", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PARTY-ADDR", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CLIENT-NAME", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CLIENT-NAME", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CONTACT-NUM", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CONTACT-NUM", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("VAT-NUM", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "VAT-NUM", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("EMAIL", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EMAIL", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `atable` SET `srno` = ?, `p_code` = ?, `v_code` = ?, `p_name` = ?, `p_addr"& _ 
-                "` = ?, `client_name` = ?, `ctct` = ? WHERE (((? = 1 AND `srno` IS NULL) OR (`srn"& _ 
-                "o` = ?)) AND (`p_code` = ?) AND ((? = 1 AND `v_code` IS NULL) OR (`v_code` = ?))"& _ 
-                " AND ((? = 1 AND `p_name` IS NULL) OR (`p_name` = ?)) AND ((? = 1 AND `p_addr` I"& _ 
-                "S NULL) OR (`p_addr` = ?)) AND ((? = 1 AND `client_name` IS NULL) OR (`client_na"& _ 
-                "me` = ?)) AND ((? = 1 AND `ctct` IS NULL) OR (`ctct` = ?)))"
+                "` = ?, `client_name` = ?, `ctct` = ?, `vat_num` = ?, `email` = ? WHERE (((? = 1 "& _ 
+                "AND `srno` IS NULL) OR (`srno` = ?)) AND (`p_code` = ?) AND ((? = 1 AND `v_code`"& _ 
+                " IS NULL) OR (`v_code` = ?)) AND ((? = 1 AND `p_name` IS NULL) OR (`p_name` = ?)"& _ 
+                ") AND ((? = 1 AND `p_addr` IS NULL) OR (`p_addr` = ?)) AND ((? = 1 AND `client_n"& _ 
+                "ame` IS NULL) OR (`client_name` = ?)) AND ((? = 1 AND `ctct` IS NULL) OR (`ctct`"& _ 
+                " = ?)) AND ((? = 1 AND `vat_num` IS NULL) OR (`vat_num` = ?)) AND ((? = 1 AND `e"& _ 
+                "mail` IS NULL) OR (`email` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SRNO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PARTY-CODE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PARTY-CODE", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -2327,6 +2422,8 @@ Namespace AdataDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PARTY-ADDR", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PARTY-ADDR", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CLIENT-NAME", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CLIENT-NAME", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CONTACT-NUM", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CONTACT-NUM", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("VAT-NUM", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "VAT-NUM", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("EMAIL", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EMAIL", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_SRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SRNO", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_SRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SRNO", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_PARTY-CODE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PARTY-CODE", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -2340,6 +2437,10 @@ Namespace AdataDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CLIENT-NAME", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CLIENT-NAME", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_CONTACT-NUM", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CONTACT-NUM", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CONTACT-NUM", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CONTACT-NUM", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_VAT-NUM", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "VAT-NUM", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_VAT-NUM", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "VAT-NUM", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_EMAIL", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EMAIL", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_EMAIL", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EMAIL", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2357,7 +2458,8 @@ Namespace AdataDataSetTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        srno AS SRNO, p_code AS [PARTY-CODE], v_code AS [VENDOR-NUM], p_nam"& _ 
                 "e AS [PARTY-NAME], p_addr AS [PARTY-ADDR], client_name AS [CLIENT-NAME], "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"     "& _ 
-                "                    ctct AS [CONTACT-NUM]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            atable"
+                "                    ctct AS [CONTACT-NUM], vat_num as [VAT-NUM], email as [EMAIL"& _ 
+                "]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            atable"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2417,7 +2519,7 @@ Namespace AdataDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_SRNO As Integer, ByVal _Original_PARTY_CODE As String, ByVal _Original_VENDOR_NUM As String, ByVal _Original_PARTY_NAME As String, ByVal _Original_PARTY_ADDR As String, ByVal _Original_CLIENT_NAME As String, ByVal _Original_CONTACT_NUM As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_SRNO As Integer, ByVal _Original_PARTY_CODE As String, ByVal _Original_VENDOR_NUM As String, ByVal _Original_PARTY_NAME As String, ByVal _Original_PARTY_ADDR As String, ByVal _Original_CLIENT_NAME As String, ByVal _Original_CONTACT_NUM As String, ByVal _Original_VAT_NUM As String, ByVal Original_EMAIL As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(0,Object)
             Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_SRNO,Integer)
             If (_Original_PARTY_CODE Is Nothing) Then
@@ -2455,6 +2557,18 @@ Namespace AdataDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = CType(_Original_CONTACT_NUM,String)
             End If
+            If (_Original_VAT_NUM Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("_Original_VAT_NUM")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(_Original_VAT_NUM,String)
+            End If
+            If (Original_EMAIL Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_EMAIL")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_EMAIL,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2474,7 +2588,7 @@ Namespace AdataDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal SRNO As Integer, ByVal _PARTY_CODE As String, ByVal _VENDOR_NUM As String, ByVal _PARTY_NAME As String, ByVal _PARTY_ADDR As String, ByVal _CLIENT_NAME As String, ByVal _CONTACT_NUM As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal SRNO As Integer, ByVal _PARTY_CODE As String, ByVal _VENDOR_NUM As String, ByVal _PARTY_NAME As String, ByVal _PARTY_ADDR As String, ByVal _CLIENT_NAME As String, ByVal _CONTACT_NUM As String, ByVal _VAT_NUM As String, ByVal EMAIL As String) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(SRNO,Integer)
             If (_PARTY_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("_PARTY_CODE")
@@ -2506,6 +2620,16 @@ Namespace AdataDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = CType(_CONTACT_NUM,String)
             End If
+            If (_VAT_NUM Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("_VAT_NUM")
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(_VAT_NUM,String)
+            End If
+            If (EMAIL Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("EMAIL")
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(EMAIL,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2525,7 +2649,25 @@ Namespace AdataDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal SRNO As Integer, ByVal _PARTY_CODE As String, ByVal _VENDOR_NUM As String, ByVal _PARTY_NAME As String, ByVal _PARTY_ADDR As String, ByVal _CLIENT_NAME As String, ByVal _CONTACT_NUM As String, ByVal Original_SRNO As Integer, ByVal _Original_PARTY_CODE As String, ByVal _Original_VENDOR_NUM As String, ByVal _Original_PARTY_NAME As String, ByVal _Original_PARTY_ADDR As String, ByVal _Original_CLIENT_NAME As String, ByVal _Original_CONTACT_NUM As String) As Integer
+        Public Overloads Overridable Function Update( _
+                    ByVal SRNO As Integer,  _
+                    ByVal _PARTY_CODE As String,  _
+                    ByVal _VENDOR_NUM As String,  _
+                    ByVal _PARTY_NAME As String,  _
+                    ByVal _PARTY_ADDR As String,  _
+                    ByVal _CLIENT_NAME As String,  _
+                    ByVal _CONTACT_NUM As String,  _
+                    ByVal _VAT_NUM As String,  _
+                    ByVal EMAIL As String,  _
+                    ByVal Original_SRNO As Integer,  _
+                    ByVal _Original_PARTY_CODE As String,  _
+                    ByVal _Original_VENDOR_NUM As String,  _
+                    ByVal _Original_PARTY_NAME As String,  _
+                    ByVal _Original_PARTY_ADDR As String,  _
+                    ByVal _Original_CLIENT_NAME As String,  _
+                    ByVal _Original_CONTACT_NUM As String,  _
+                    ByVal _Original_VAT_NUM As String,  _
+                    ByVal Original_EMAIL As String) As Integer
             Me.Adapter.UpdateCommand.Parameters(0).Value = CType(SRNO,Integer)
             If (_PARTY_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("_PARTY_CODE")
@@ -2557,42 +2699,64 @@ Namespace AdataDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(_CONTACT_NUM,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_SRNO,Integer)
+            If (_VAT_NUM Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("_VAT_NUM")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(_VAT_NUM,String)
+            End If
+            If (EMAIL Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("EMAIL")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(EMAIL,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_SRNO,Integer)
             If (_Original_PARTY_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("_Original_PARTY_CODE")
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(_Original_PARTY_CODE,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(_Original_PARTY_CODE,String)
             End If
             If (_Original_VENDOR_NUM Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("_Original_VENDOR_NUM")
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(_Original_VENDOR_NUM,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(_Original_VENDOR_NUM,String)
             End If
             If (_Original_PARTY_NAME Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("_Original_PARTY_NAME")
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(_Original_PARTY_NAME,String)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(_Original_PARTY_NAME,String)
             End If
             If (_Original_PARTY_ADDR Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("_Original_PARTY_ADDR")
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(_Original_PARTY_ADDR,String)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(_Original_PARTY_ADDR,String)
             End If
             If (_Original_CLIENT_NAME Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("_Original_CLIENT_NAME")
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(_Original_CLIENT_NAME,String)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(_Original_CLIENT_NAME,String)
             End If
             If (_Original_CONTACT_NUM Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("_Original_CONTACT_NUM")
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(_Original_CONTACT_NUM,String)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(_Original_CONTACT_NUM,String)
+            End If
+            If (_Original_VAT_NUM Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("_Original_VAT_NUM")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(_Original_VAT_NUM,String)
+            End If
+            If (Original_EMAIL Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_EMAIL")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_EMAIL,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -2613,8 +2777,25 @@ Namespace AdataDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal SRNO As Integer, ByVal _VENDOR_NUM As String, ByVal _PARTY_NAME As String, ByVal _PARTY_ADDR As String, ByVal _CLIENT_NAME As String, ByVal _CONTACT_NUM As String, ByVal Original_SRNO As Integer, ByVal _Original_PARTY_CODE As String, ByVal _Original_VENDOR_NUM As String, ByVal _Original_PARTY_NAME As String, ByVal _Original_PARTY_ADDR As String, ByVal _Original_CLIENT_NAME As String, ByVal _Original_CONTACT_NUM As String) As Integer
-            Return Me.Update(SRNO, _Original_PARTY_CODE, _VENDOR_NUM, _PARTY_NAME, _PARTY_ADDR, _CLIENT_NAME, _CONTACT_NUM, Original_SRNO, _Original_PARTY_CODE, _Original_VENDOR_NUM, _Original_PARTY_NAME, _Original_PARTY_ADDR, _Original_CLIENT_NAME, _Original_CONTACT_NUM)
+        Public Overloads Overridable Function Update( _
+                    ByVal SRNO As Integer,  _
+                    ByVal _VENDOR_NUM As String,  _
+                    ByVal _PARTY_NAME As String,  _
+                    ByVal _PARTY_ADDR As String,  _
+                    ByVal _CLIENT_NAME As String,  _
+                    ByVal _CONTACT_NUM As String,  _
+                    ByVal _VAT_NUM As String,  _
+                    ByVal EMAIL As String,  _
+                    ByVal Original_SRNO As Integer,  _
+                    ByVal _Original_PARTY_CODE As String,  _
+                    ByVal _Original_VENDOR_NUM As String,  _
+                    ByVal _Original_PARTY_NAME As String,  _
+                    ByVal _Original_PARTY_ADDR As String,  _
+                    ByVal _Original_CLIENT_NAME As String,  _
+                    ByVal _Original_CONTACT_NUM As String,  _
+                    ByVal _Original_VAT_NUM As String,  _
+                    ByVal Original_EMAIL As String) As Integer
+            Return Me.Update(SRNO, _Original_PARTY_CODE, _VENDOR_NUM, _PARTY_NAME, _PARTY_ADDR, _CLIENT_NAME, _CONTACT_NUM, _VAT_NUM, EMAIL, Original_SRNO, _Original_PARTY_CODE, _Original_VENDOR_NUM, _Original_PARTY_NAME, _Original_PARTY_ADDR, _Original_CLIENT_NAME, _Original_CONTACT_NUM, _Original_VAT_NUM, Original_EMAIL)
         End Function
     End Class
     

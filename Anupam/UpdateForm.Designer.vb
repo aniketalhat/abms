@@ -36,12 +36,16 @@ Partial Class UpdateForm
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox26 = New System.Windows.Forms.TextBox()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.Label45 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(119, 338)
+        Me.Button1.Location = New System.Drawing.Point(131, 370)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(92, 33)
         Me.Button1.TabIndex = 0
@@ -51,6 +55,10 @@ Partial Class UpdateForm
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.TextBox26)
+        Me.GroupBox2.Controls.Add(Me.Label48)
+        Me.GroupBox2.Controls.Add(Me.TextBox25)
+        Me.GroupBox2.Controls.Add(Me.Label45)
         Me.GroupBox2.Controls.Add(Me.TextBox18)
         Me.GroupBox2.Controls.Add(Me.Label39)
         Me.GroupBox2.Controls.Add(Me.TextBox17)
@@ -63,9 +71,9 @@ Partial Class UpdateForm
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.TextBox2)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Location = New System.Drawing.Point(15, 22)
+        Me.GroupBox2.Location = New System.Drawing.Point(15, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(318, 304)
+        Me.GroupBox2.Size = New System.Drawing.Size(318, 352)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Party Description"
@@ -180,11 +188,47 @@ Partial Class UpdateForm
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Party Code"
         '
+        'TextBox26
+        '
+        Me.TextBox26.Location = New System.Drawing.Point(154, 322)
+        Me.TextBox26.MaxLength = 100
+        Me.TextBox26.Name = "TextBox26"
+        Me.TextBox26.Size = New System.Drawing.Size(135, 23)
+        Me.TextBox26.TabIndex = 43
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label48.Location = New System.Drawing.Point(22, 330)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(77, 15)
+        Me.Label48.TabIndex = 44
+        Me.Label48.Text = "VAT Number"
+        '
+        'TextBox25
+        '
+        Me.TextBox25.Location = New System.Drawing.Point(154, 286)
+        Me.TextBox25.MaxLength = 100
+        Me.TextBox25.Name = "TextBox25"
+        Me.TextBox25.Size = New System.Drawing.Size(135, 23)
+        Me.TextBox25.TabIndex = 41
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label45.Location = New System.Drawing.Point(22, 294)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(39, 15)
+        Me.Label45.TabIndex = 42
+        Me.Label45.Text = "Email"
+        '
         'UpdateForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(356, 383)
+        Me.ClientSize = New System.Drawing.Size(352, 414)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Button1)
         Me.Font = New System.Drawing.Font("Cambria", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -212,4 +256,8 @@ Partial Class UpdateForm
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents TextBox26 As System.Windows.Forms.TextBox
+    Friend WithEvents Label48 As System.Windows.Forms.Label
+    Friend WithEvents TextBox25 As System.Windows.Forms.TextBox
+    Friend WithEvents Label45 As System.Windows.Forms.Label
 End Class

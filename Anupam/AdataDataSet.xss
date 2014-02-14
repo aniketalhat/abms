@@ -7,22 +7,26 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="-10" ViewPortY="-47" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:acctable" ZOrder="3" X="62" Y="33" Height="305" Width="192" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:atable" ZOrder="2" X="423" Y="67" Height="115" Width="180" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:atable" ZOrder="2" X="423" Y="67" Height="248" Width="180" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:atableacctable" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:atable_acctable" ZOrder="1" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>423</X>
-          <Y>115</Y>
+          <X>150</X>
+          <Y>0</Y>
         </Point>
         <Point>
-          <X>367</X>
-          <Y>115</Y>
+          <X>150</X>
+          <Y>-30</Y>
         </Point>
         <Point>
-          <X>254</X>
-          <Y>115</Y>
+          <X>150</X>
+          <Y>-30</Y>
+        </Point>
+        <Point>
+          <X>150</X>
+          <Y>0</Y>
         </Point>
       </RoutePoints>
     </Connector>

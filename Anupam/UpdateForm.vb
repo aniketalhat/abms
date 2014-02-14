@@ -28,7 +28,7 @@ Public Class UpdateForm
             Dim in_srno As Integer = 0
             Dim srno As Integer = 0
 
-            Dim p_name, p_code, p_addr, ctct, v_code, client_name As String
+            Dim p_name, p_code, p_addr, ctct, v_code, client_name, email, vat_num As String
             Dim strsql As String
 
             con = New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & Directory.GetCurrentDirectory & "\Adata.mdb;")
@@ -40,11 +40,13 @@ Public Class UpdateForm
                 ctct = Me.TextBox5.Text
                 v_code = Me.TextBox17.Text
                 client_name = Me.TextBox18.Text
+                email = Me.TextBox25.Text
+                vat_num = Me.TextBox26.Text
 
                 Dim str1 As String = CStr(srno)
                 Dim str2 As String = "PAR"
 
-                strsql = "Update atable set v_code='" & v_code & "',p_name='" & p_name & "',p_addr='" & p_addr & "',client_name='" & client_name & "',ctct='" & ctct & "' where p_code='" & p_code & "'"
+                strsql = "Update atable set v_code='" & v_code & "',p_name='" & p_name & "',p_addr='" & p_addr & "',client_name='" & client_name & "',ctct='" & ctct & "',email='" & email & "',vat_num='" & vat_num & "' where p_code='" & p_code & "'"
 
                 Dim x As Integer
                 Dim sql As New OleDbCommand(strsql, con)
@@ -79,6 +81,9 @@ Public Class UpdateForm
                 TextBox4.Text = rs(4)
                 TextBox18.Text = rs(5)
                 TextBox5.Text = rs(6)
+                TextBox25.Text = rs(7)
+                TextBox26.Text = rs(8)
+
             End While
             con.Close()
         Catch ex As Exception

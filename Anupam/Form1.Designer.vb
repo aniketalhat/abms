@@ -33,10 +33,13 @@ Partial Class MainForm
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Button15 = New System.Windows.Forms.Button()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.Label37 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TextBox27 = New System.Windows.Forms.TextBox()
+        Me.Label49 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label31 = New System.Windows.Forms.Label()
@@ -67,6 +70,10 @@ Partial Class MainForm
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TextBox26 = New System.Windows.Forms.TextBox()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.Label45 = New System.Windows.Forms.Label()
         Me.TextBox18 = New System.Windows.Forms.TextBox()
         Me.Button14 = New System.Windows.Forms.Button()
         Me.Label39 = New System.Windows.Forms.Label()
@@ -151,14 +158,6 @@ Partial Class MainForm
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.PcodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.InvoiceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AmttypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RefnoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AmtDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AmtdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AcctableBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.AdataDataSet1 = New Anupam.AdataDataSet1()
         Me.ExpBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -188,7 +187,15 @@ Partial Class MainForm
         Me.AcctableTableAdapter1 = New Anupam.AdataDataSet1TableAdapters.acctableTableAdapter()
         Me.AtableTableAdapter = New Anupam.AdataDataSetTableAdapters.atableTableAdapter()
         Me.AcctableTableAdapter = New Anupam.AdataDataSetTableAdapters.acctableTableAdapter()
-        Me.Label37 = New System.Windows.Forms.Label()
+        Me.PcodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bank = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InvoiceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AmttypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RefnoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AmtDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AmtdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage2.SuspendLayout()
         CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AdataDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -317,7 +324,7 @@ Partial Class MainForm
         '
         'Button15
         '
-        Me.Button15.Location = New System.Drawing.Point(67, 616)
+        Me.Button15.Location = New System.Drawing.Point(60, 629)
         Me.Button15.Name = "Button15"
         Me.Button15.Size = New System.Drawing.Size(106, 37)
         Me.Button15.TabIndex = 101
@@ -335,6 +342,16 @@ Partial Class MainForm
         Me.GroupBox10.TabIndex = 6
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "Powered By"
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label37.Location = New System.Drawing.Point(12, 163)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(156, 15)
+        Me.Label37.TabIndex = 111
+        Me.Label37.Text = "Version: 0.2 Date: 14-02-14"
         '
         'PictureBox1
         '
@@ -376,6 +393,8 @@ Partial Class MainForm
         '
         Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.Controls.Add(Me.TextBox27)
+        Me.GroupBox3.Controls.Add(Me.Label49)
         Me.GroupBox3.Controls.Add(Me.Button4)
         Me.GroupBox3.Controls.Add(Me.ComboBox2)
         Me.GroupBox3.Controls.Add(Me.Label31)
@@ -396,6 +415,23 @@ Partial Class MainForm
         Me.GroupBox3.TabIndex = 5
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Step-5 Account Information"
+        '
+        'TextBox27
+        '
+        Me.TextBox27.Location = New System.Drawing.Point(167, 146)
+        Me.TextBox27.Name = "TextBox27"
+        Me.TextBox27.Size = New System.Drawing.Size(135, 23)
+        Me.TextBox27.TabIndex = 36
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label49.Location = New System.Drawing.Point(18, 154)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(70, 15)
+        Me.Label49.TabIndex = 35
+        Me.Label49.Text = "Bank Name"
         '
         'Button4
         '
@@ -429,7 +465,7 @@ Partial Class MainForm
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(167, 113)
+        Me.ComboBox1.Location = New System.Drawing.Point(167, 109)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(135, 23)
         Me.ComboBox1.TabIndex = 26
@@ -455,7 +491,7 @@ Partial Class MainForm
         '
         'TextBox8
         '
-        Me.TextBox8.Location = New System.Drawing.Point(167, 203)
+        Me.TextBox8.Location = New System.Drawing.Point(167, 214)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(135, 23)
         Me.TextBox8.TabIndex = 28
@@ -473,7 +509,7 @@ Partial Class MainForm
         '
         Me.Label33.AutoSize = True
         Me.Label33.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label33.Location = New System.Drawing.Point(18, 211)
+        Me.Label33.Location = New System.Drawing.Point(18, 222)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(51, 15)
         Me.Label33.TabIndex = 28
@@ -481,7 +517,7 @@ Partial Class MainForm
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(167, 158)
+        Me.TextBox7.Location = New System.Drawing.Point(167, 178)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(135, 23)
         Me.TextBox7.TabIndex = 27
@@ -490,7 +526,7 @@ Partial Class MainForm
         '
         Me.Label34.AutoSize = True
         Me.Label34.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label34.Location = New System.Drawing.Point(18, 166)
+        Me.Label34.Location = New System.Drawing.Point(18, 186)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(120, 15)
         Me.Label34.TabIndex = 25
@@ -500,7 +536,7 @@ Partial Class MainForm
         '
         Me.Label35.AutoSize = True
         Me.Label35.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label35.Location = New System.Drawing.Point(18, 121)
+        Me.Label35.Location = New System.Drawing.Point(18, 117)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(82, 15)
         Me.Label35.TabIndex = 24
@@ -684,6 +720,10 @@ Partial Class MainForm
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.TextBox26)
+        Me.GroupBox2.Controls.Add(Me.Label48)
+        Me.GroupBox2.Controls.Add(Me.TextBox25)
+        Me.GroupBox2.Controls.Add(Me.Label45)
         Me.GroupBox2.Controls.Add(Me.TextBox18)
         Me.GroupBox2.Controls.Add(Me.Button14)
         Me.GroupBox2.Controls.Add(Me.Label39)
@@ -697,16 +737,52 @@ Partial Class MainForm
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.TextBox2)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Location = New System.Drawing.Point(10, 250)
+        Me.GroupBox2.Location = New System.Drawing.Point(10, 234)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(301, 335)
+        Me.GroupBox2.Size = New System.Drawing.Size(301, 389)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Step-2 Party Description"
         '
+        'TextBox26
+        '
+        Me.TextBox26.Location = New System.Drawing.Point(154, 286)
+        Me.TextBox26.MaxLength = 100
+        Me.TextBox26.Name = "TextBox26"
+        Me.TextBox26.Size = New System.Drawing.Size(135, 23)
+        Me.TextBox26.TabIndex = 39
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label48.Location = New System.Drawing.Point(19, 294)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(77, 15)
+        Me.Label48.TabIndex = 40
+        Me.Label48.Text = "VAT Number"
+        '
+        'TextBox25
+        '
+        Me.TextBox25.Location = New System.Drawing.Point(154, 249)
+        Me.TextBox25.MaxLength = 100
+        Me.TextBox25.Name = "TextBox25"
+        Me.TextBox25.Size = New System.Drawing.Size(135, 23)
+        Me.TextBox25.TabIndex = 37
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label45.Location = New System.Drawing.Point(20, 259)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(39, 15)
+        Me.Label45.TabIndex = 38
+        Me.Label45.Text = "Email"
+        '
         'TextBox18
         '
-        Me.TextBox18.Location = New System.Drawing.Point(154, 203)
+        Me.TextBox18.Location = New System.Drawing.Point(154, 171)
         Me.TextBox18.MaxLength = 100
         Me.TextBox18.Name = "TextBox18"
         Me.TextBox18.Size = New System.Drawing.Size(135, 23)
@@ -714,7 +790,7 @@ Partial Class MainForm
         '
         'Button14
         '
-        Me.Button14.Location = New System.Drawing.Point(107, 283)
+        Me.Button14.Location = New System.Drawing.Point(102, 343)
         Me.Button14.Name = "Button14"
         Me.Button14.Size = New System.Drawing.Size(90, 36)
         Me.Button14.TabIndex = 14
@@ -725,7 +801,7 @@ Partial Class MainForm
         '
         Me.Label39.AutoSize = True
         Me.Label39.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label39.Location = New System.Drawing.Point(22, 211)
+        Me.Label39.Location = New System.Drawing.Point(22, 179)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(74, 15)
         Me.Label39.TabIndex = 36
@@ -733,7 +809,7 @@ Partial Class MainForm
         '
         'TextBox17
         '
-        Me.TextBox17.Location = New System.Drawing.Point(154, 73)
+        Me.TextBox17.Location = New System.Drawing.Point(154, 64)
         Me.TextBox17.MaxLength = 100
         Me.TextBox17.Name = "TextBox17"
         Me.TextBox17.Size = New System.Drawing.Size(135, 23)
@@ -743,7 +819,7 @@ Partial Class MainForm
         '
         Me.Label38.AutoSize = True
         Me.Label38.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label38.Location = New System.Drawing.Point(22, 81)
+        Me.Label38.Location = New System.Drawing.Point(22, 72)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(76, 15)
         Me.Label38.TabIndex = 34
@@ -751,7 +827,7 @@ Partial Class MainForm
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(154, 246)
+        Me.TextBox5.Location = New System.Drawing.Point(153, 211)
         Me.TextBox5.MaxLength = 10
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(135, 23)
@@ -759,14 +835,14 @@ Partial Class MainForm
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(154, 160)
+        Me.TextBox4.Location = New System.Drawing.Point(154, 134)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(135, 23)
         Me.TextBox4.TabIndex = 7
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(154, 116)
+        Me.TextBox3.Location = New System.Drawing.Point(154, 98)
         Me.TextBox3.MaxLength = 100
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(135, 23)
@@ -776,7 +852,7 @@ Partial Class MainForm
         '
         Me.Label4.AutoSize = True
         Me.Label4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label4.Location = New System.Drawing.Point(22, 124)
+        Me.Label4.Location = New System.Drawing.Point(22, 106)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(71, 15)
         Me.Label4.TabIndex = 9
@@ -786,7 +862,7 @@ Partial Class MainForm
         '
         Me.Label12.AutoSize = True
         Me.Label12.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label12.Location = New System.Drawing.Point(22, 254)
+        Me.Label12.Location = New System.Drawing.Point(21, 219)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(105, 15)
         Me.Label12.TabIndex = 14
@@ -796,7 +872,7 @@ Partial Class MainForm
         '
         Me.Label11.AutoSize = True
         Me.Label11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label11.Location = New System.Drawing.Point(22, 168)
+        Me.Label11.Location = New System.Drawing.Point(22, 142)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(84, 15)
         Me.Label11.TabIndex = 13
@@ -885,7 +961,7 @@ Partial Class MainForm
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button2.Location = New System.Drawing.Point(194, 617)
+        Me.Button2.Location = New System.Drawing.Point(189, 630)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(90, 36)
         Me.Button2.TabIndex = 100
@@ -1571,7 +1647,7 @@ Partial Class MainForm
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PcodeDataGridViewTextBoxColumn, Me.InvoiceDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn, Me.AmttypeDataGridViewTextBoxColumn, Me.RefnoDataGridViewTextBoxColumn, Me.AmtDataGridViewTextBoxColumn, Me.AmtdateDataGridViewTextBoxColumn, Me.desc})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PcodeDataGridViewTextBoxColumn, Me.bank, Me.InvoiceDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn, Me.AmttypeDataGridViewTextBoxColumn, Me.RefnoDataGridViewTextBoxColumn, Me.AmtDataGridViewTextBoxColumn, Me.AmtdateDataGridViewTextBoxColumn, Me.desc})
         Me.DataGridView1.DataSource = Me.AcctableBindingSource1
         Me.DataGridView1.Location = New System.Drawing.Point(87, 62)
         Me.DataGridView1.Name = "DataGridView1"
@@ -1579,62 +1655,6 @@ Partial Class MainForm
         Me.DataGridView1.RowHeadersWidth = 15
         Me.DataGridView1.Size = New System.Drawing.Size(817, 280)
         Me.DataGridView1.TabIndex = 2
-        '
-        'PcodeDataGridViewTextBoxColumn
-        '
-        Me.PcodeDataGridViewTextBoxColumn.DataPropertyName = "p_code"
-        Me.PcodeDataGridViewTextBoxColumn.HeaderText = "PARTY-CODE"
-        Me.PcodeDataGridViewTextBoxColumn.Name = "PcodeDataGridViewTextBoxColumn"
-        Me.PcodeDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'InvoiceDataGridViewTextBoxColumn
-        '
-        Me.InvoiceDataGridViewTextBoxColumn.DataPropertyName = "invoice"
-        Me.InvoiceDataGridViewTextBoxColumn.HeaderText = "INVOICE"
-        Me.InvoiceDataGridViewTextBoxColumn.Name = "InvoiceDataGridViewTextBoxColumn"
-        Me.InvoiceDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'StatusDataGridViewTextBoxColumn
-        '
-        Me.StatusDataGridViewTextBoxColumn.DataPropertyName = "status"
-        Me.StatusDataGridViewTextBoxColumn.HeaderText = "STATUS"
-        Me.StatusDataGridViewTextBoxColumn.Name = "StatusDataGridViewTextBoxColumn"
-        Me.StatusDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'AmttypeDataGridViewTextBoxColumn
-        '
-        Me.AmttypeDataGridViewTextBoxColumn.DataPropertyName = "amt_type"
-        Me.AmttypeDataGridViewTextBoxColumn.HeaderText = "AMOUNT-TYPE"
-        Me.AmttypeDataGridViewTextBoxColumn.Name = "AmttypeDataGridViewTextBoxColumn"
-        Me.AmttypeDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'RefnoDataGridViewTextBoxColumn
-        '
-        Me.RefnoDataGridViewTextBoxColumn.DataPropertyName = "ref_no"
-        Me.RefnoDataGridViewTextBoxColumn.HeaderText = "REFERENCE-NUM"
-        Me.RefnoDataGridViewTextBoxColumn.Name = "RefnoDataGridViewTextBoxColumn"
-        Me.RefnoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'AmtDataGridViewTextBoxColumn
-        '
-        Me.AmtDataGridViewTextBoxColumn.DataPropertyName = "amt"
-        Me.AmtDataGridViewTextBoxColumn.HeaderText = "AMOUNT-PAID"
-        Me.AmtDataGridViewTextBoxColumn.Name = "AmtDataGridViewTextBoxColumn"
-        Me.AmtDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'AmtdateDataGridViewTextBoxColumn
-        '
-        Me.AmtdateDataGridViewTextBoxColumn.DataPropertyName = "amt_date"
-        Me.AmtdateDataGridViewTextBoxColumn.HeaderText = "AMOUNT-DATE"
-        Me.AmtdateDataGridViewTextBoxColumn.Name = "AmtdateDataGridViewTextBoxColumn"
-        Me.AmtdateDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'desc
-        '
-        Me.desc.DataPropertyName = "desc"
-        Me.desc.HeaderText = "DESCRIPTION"
-        Me.desc.Name = "desc"
-        Me.desc.ReadOnly = True
         '
         'AcctableBindingSource1
         '
@@ -1836,15 +1856,68 @@ Partial Class MainForm
         '
         Me.AcctableTableAdapter.ClearBeforeFill = True
         '
-        'Label37
+        'PcodeDataGridViewTextBoxColumn
         '
-        Me.Label37.AutoSize = True
-        Me.Label37.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label37.Location = New System.Drawing.Point(12, 163)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(156, 15)
-        Me.Label37.TabIndex = 111
-        Me.Label37.Text = "Version: 0.1 Date: 27-01-14"
+        Me.PcodeDataGridViewTextBoxColumn.DataPropertyName = "p_code"
+        Me.PcodeDataGridViewTextBoxColumn.HeaderText = "PARTY-CODE"
+        Me.PcodeDataGridViewTextBoxColumn.Name = "PcodeDataGridViewTextBoxColumn"
+        Me.PcodeDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'bank
+        '
+        Me.bank.DataPropertyName = "bank"
+        Me.bank.HeaderText = "BANK"
+        Me.bank.Name = "bank"
+        Me.bank.ReadOnly = True
+        '
+        'InvoiceDataGridViewTextBoxColumn
+        '
+        Me.InvoiceDataGridViewTextBoxColumn.DataPropertyName = "invoice"
+        Me.InvoiceDataGridViewTextBoxColumn.HeaderText = "INVOICE"
+        Me.InvoiceDataGridViewTextBoxColumn.Name = "InvoiceDataGridViewTextBoxColumn"
+        Me.InvoiceDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'StatusDataGridViewTextBoxColumn
+        '
+        Me.StatusDataGridViewTextBoxColumn.DataPropertyName = "status"
+        Me.StatusDataGridViewTextBoxColumn.HeaderText = "STATUS"
+        Me.StatusDataGridViewTextBoxColumn.Name = "StatusDataGridViewTextBoxColumn"
+        Me.StatusDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'AmttypeDataGridViewTextBoxColumn
+        '
+        Me.AmttypeDataGridViewTextBoxColumn.DataPropertyName = "amt_type"
+        Me.AmttypeDataGridViewTextBoxColumn.HeaderText = "AMOUNT-TYPE"
+        Me.AmttypeDataGridViewTextBoxColumn.Name = "AmttypeDataGridViewTextBoxColumn"
+        Me.AmttypeDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'RefnoDataGridViewTextBoxColumn
+        '
+        Me.RefnoDataGridViewTextBoxColumn.DataPropertyName = "ref_no"
+        Me.RefnoDataGridViewTextBoxColumn.HeaderText = "REFERENCE-NUM"
+        Me.RefnoDataGridViewTextBoxColumn.Name = "RefnoDataGridViewTextBoxColumn"
+        Me.RefnoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'AmtDataGridViewTextBoxColumn
+        '
+        Me.AmtDataGridViewTextBoxColumn.DataPropertyName = "amt"
+        Me.AmtDataGridViewTextBoxColumn.HeaderText = "AMOUNT-PAID"
+        Me.AmtDataGridViewTextBoxColumn.Name = "AmtDataGridViewTextBoxColumn"
+        Me.AmtDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'AmtdateDataGridViewTextBoxColumn
+        '
+        Me.AmtdateDataGridViewTextBoxColumn.DataPropertyName = "amt_date"
+        Me.AmtdateDataGridViewTextBoxColumn.HeaderText = "AMOUNT-DATE"
+        Me.AmtdateDataGridViewTextBoxColumn.Name = "AmtdateDataGridViewTextBoxColumn"
+        Me.AmtdateDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'desc
+        '
+        Me.desc.DataPropertyName = "desc"
+        Me.desc.HeaderText = "DESCRIPTION"
+        Me.desc.Name = "desc"
+        Me.desc.ReadOnly = True
         '
         'MainForm
         '
@@ -2060,7 +2133,15 @@ Partial Class MainForm
     Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
     Friend WithEvents Button15 As System.Windows.Forms.Button
     Friend WithEvents Button14 As System.Windows.Forms.Button
+    Friend WithEvents Label37 As System.Windows.Forms.Label
+    Friend WithEvents TextBox26 As System.Windows.Forms.TextBox
+    Friend WithEvents Label48 As System.Windows.Forms.Label
+    Friend WithEvents TextBox25 As System.Windows.Forms.TextBox
+    Friend WithEvents Label45 As System.Windows.Forms.Label
+    Friend WithEvents TextBox27 As System.Windows.Forms.TextBox
+    Friend WithEvents Label49 As System.Windows.Forms.Label
     Friend WithEvents PcodeDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents bank As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents InvoiceDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents StatusDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents AmttypeDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -2068,6 +2149,5 @@ Partial Class MainForm
     Friend WithEvents AmtDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents AmtdateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents desc As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Label37 As System.Windows.Forms.Label
 
 End Class

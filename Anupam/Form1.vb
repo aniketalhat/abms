@@ -351,6 +351,8 @@ Public Class MainForm
                 TextBox4.Text = rs(4)
                 TextBox18.Text = rs(5)
                 TextBox5.Text = rs(6)
+                TextBox25.Text = rs(7)
+                TextBox26.Text = rs(8)
 
             End While
 
@@ -372,6 +374,7 @@ Public Class MainForm
                     TextBox12.Text = rs1(7)
                     TextBox13.Text = rs1(3)
                     DateTimePicker1.Text = rs1(14)
+
                 End While
                 rem_dup(ComboBox2)
             End If
@@ -524,7 +527,7 @@ Public Class MainForm
 
                 'DECL.
 
-                Dim ref_no, desc, status, amt_type, c_date, amt_date, credit As String
+                Dim ref_no, desc, status, amt_type, c_date, amt_date, credit, bank As String
                 Dim qty As Integer
                 Dim tamt, amt, rate, vat As Double
                 Dim strsql2 As String
@@ -548,7 +551,7 @@ Public Class MainForm
                 amt = 0
                 ref_no = "NA"
                 amt_date = "NA"
-
+                bank = "NA"
 
                 If RadioButton4.Checked = True Then
 
@@ -559,6 +562,7 @@ Public Class MainForm
                         ref_no = "NA"
                     Else
                         ref_no = TextBox7.Text
+                        bank = TextBox27.Text
                     End If
 
 
@@ -567,7 +571,7 @@ Public Class MainForm
 
                 End If
                 'AND obj_no=" & obj_no & " No need of this. update for all objects one time.
-                strsql2 = "Update acctable set status='" & status & "',c_date='" & c_date & "',amt_type='" & amt_type & "',ref_no='" & ref_no & "',amt=" & amt & ",amt_date='" & amt_date & "' where invoice= " & invoice & " "
+                strsql2 = "Update acctable set status='" & status & "',c_date='" & c_date & "',amt_type='" & amt_type & "',ref_no='" & ref_no & "',amt=" & amt & ",amt_date='" & amt_date & "',bank='" & bank & "' where invoice= " & invoice & " "
                 Dim x2 As Integer
                 Dim sql2 As New OleDbCommand(strsql2, con)
                 x2 = sql2.ExecuteNonQuery()
@@ -1054,7 +1058,7 @@ Public Class MainForm
             Dim in_srno As Integer = 0
             Dim srno As Integer = 0
 
-            Dim p_name, p_code, p_addr, ctct, v_code, client_name As String
+            Dim p_name, p_code, p_addr, ctct, v_code, client_name, email, vat_num As String
             Dim strsql As String
 
             con = New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & Directory.GetCurrentDirectory & "\Adata.mdb;")
@@ -1070,6 +1074,9 @@ Public Class MainForm
                 ctct = TextBox5.Text
                 v_code = TextBox17.Text
                 client_name = TextBox18.Text
+                email = TextBox25.Text
+                vat_num = TextBox26.Text
+
 
                 If RadioButton2.Checked = False Then
 
@@ -1087,7 +1094,7 @@ Public Class MainForm
                     p_code = str2 + str1 + "-" + p_name
 
 
-                    strsql = "insert into atable values(" & srno & ",'" & p_code & "','" & v_code & "','" & p_name & "','" & p_addr & "','" & client_name & "','" & ctct & "')"
+                    strsql = "insert into atable values(" & srno & ",'" & p_code & "','" & v_code & "','" & p_name & "','" & p_addr & "','" & client_name & "','" & ctct & "','" & email & "','" & vat_num & "')"
 
                     Dim x As Integer
                     Dim sql As New OleDbCommand(strsql, con)
@@ -1117,4 +1124,6 @@ Public Class MainForm
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+
 End Class
