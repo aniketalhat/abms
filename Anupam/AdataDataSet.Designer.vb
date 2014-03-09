@@ -334,8 +334,6 @@ Partial Public Class AdataDataSet
         
         Private columnQUANTITY As Global.System.Data.DataColumn
         
-        Private columnRATE As Global.System.Data.DataColumn
-        
         Private columnVAT As Global.System.Data.DataColumn
         
         Private _columnTOT_AMT As Global.System.Data.DataColumn
@@ -343,6 +341,10 @@ Partial Public Class AdataDataSet
         Private columnSTATUS As Global.System.Data.DataColumn
         
         Private _columnCREDIT_DATE As Global.System.Data.DataColumn
+        
+        Private _columnORDER_TYPE As Global.System.Data.DataColumn
+        
+        Private columnRATE As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -421,14 +423,6 @@ Partial Public Class AdataDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property RATEColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnRATE
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property VATColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnVAT
@@ -456,6 +450,22 @@ Partial Public Class AdataDataSet
         Public ReadOnly Property _CREDIT_DATEColumn() As Global.System.Data.DataColumn
             Get
                 Return Me._columnCREDIT_DATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property _ORDER_TYPEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me._columnORDER_TYPE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property RATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRATE
             End Get
         End Property
         
@@ -496,9 +506,9 @@ Partial Public Class AdataDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddacctableRow(ByVal SRNO As Integer, ByVal _INVOICE_NUM As Integer, ByVal parentatableRowByatable_acctable As atableRow, ByVal DESCRIPTION As String, ByVal QUANTITY As Integer, ByVal RATE As Integer, ByVal VAT As Double, ByVal _TOT_AMT As Double, ByVal STATUS As String, ByVal _CREDIT_DATE As Date) As acctableRow
+        Public Overloads Function AddacctableRow(ByVal SRNO As Integer, ByVal _INVOICE_NUM As Integer, ByVal parentatableRowByatable_acctable As atableRow, ByVal DESCRIPTION As String, ByVal QUANTITY As Integer, ByVal VAT As Double, ByVal _TOT_AMT As Double, ByVal STATUS As String, ByVal _CREDIT_DATE As Date, ByVal _ORDER_TYPE As String, ByVal RATE As Double) As acctableRow
             Dim rowacctableRow As acctableRow = CType(Me.NewRow,acctableRow)
-            Dim columnValuesArray() As Object = New Object() {SRNO, _INVOICE_NUM, Nothing, DESCRIPTION, QUANTITY, RATE, VAT, _TOT_AMT, STATUS, _CREDIT_DATE}
+            Dim columnValuesArray() As Object = New Object() {SRNO, _INVOICE_NUM, Nothing, DESCRIPTION, QUANTITY, VAT, _TOT_AMT, STATUS, _CREDIT_DATE, _ORDER_TYPE, RATE}
             If (Not (parentatableRowByatable_acctable) Is Nothing) Then
                 columnValuesArray(2) = parentatableRowByatable_acctable(1)
             End If
@@ -541,11 +551,12 @@ Partial Public Class AdataDataSet
             Me._columnPARTY_CODE = MyBase.Columns("PARTY-CODE")
             Me.columnDESCRIPTION = MyBase.Columns("DESCRIPTION")
             Me.columnQUANTITY = MyBase.Columns("QUANTITY")
-            Me.columnRATE = MyBase.Columns("RATE")
             Me.columnVAT = MyBase.Columns("VAT")
             Me._columnTOT_AMT = MyBase.Columns("TOT-AMT")
             Me.columnSTATUS = MyBase.Columns("STATUS")
             Me._columnCREDIT_DATE = MyBase.Columns("CREDIT-DATE")
+            Me._columnORDER_TYPE = MyBase.Columns("ORDER-TYPE")
+            Me.columnRATE = MyBase.Columns("RATE")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -565,8 +576,6 @@ Partial Public Class AdataDataSet
             MyBase.Columns.Add(Me.columnDESCRIPTION)
             Me.columnQUANTITY = New Global.System.Data.DataColumn("QUANTITY", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnQUANTITY)
-            Me.columnRATE = New Global.System.Data.DataColumn("RATE", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnRATE)
             Me.columnVAT = New Global.System.Data.DataColumn("VAT", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnVAT)
             Me._columnTOT_AMT = New Global.System.Data.DataColumn("TOT-AMT", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
@@ -579,12 +588,19 @@ Partial Public Class AdataDataSet
             Me._columnCREDIT_DATE.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnCREDIT_DATE")
             Me._columnCREDIT_DATE.ExtendedProperties.Add("Generator_UserColumnName", "CREDIT-DATE")
             MyBase.Columns.Add(Me._columnCREDIT_DATE)
+            Me._columnORDER_TYPE = New Global.System.Data.DataColumn("ORDER-TYPE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me._columnORDER_TYPE.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnORDER_TYPE")
+            Me._columnORDER_TYPE.ExtendedProperties.Add("Generator_UserColumnName", "ORDER-TYPE")
+            MyBase.Columns.Add(Me._columnORDER_TYPE)
+            Me.columnRATE = New Global.System.Data.DataColumn("RATE", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRATE)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnSRNO}, true))
             Me.columnSRNO.AllowDBNull = false
             Me.columnSRNO.Unique = true
             Me._columnPARTY_CODE.MaxLength = 255
             Me.columnDESCRIPTION.MaxLength = 255
             Me.columnSTATUS.MaxLength = 255
+            Me._columnORDER_TYPE.MaxLength = 4
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1196,21 +1212,6 @@ Partial Public Class AdataDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property RATE() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableacctable.RATEColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'RATE' in table 'acctable' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableacctable.RATEColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property VAT() As Double
             Get
                 Try 
@@ -1266,6 +1267,36 @@ Partial Public Class AdataDataSet
             End Get
             Set
                 Me(Me.tableacctable._CREDIT_DATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property _ORDER_TYPE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableacctable._ORDER_TYPEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ORDER-TYPE' in table 'acctable' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableacctable._ORDER_TYPEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property RATE() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tableacctable.RATEColumn),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'RATE' in table 'acctable' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableacctable.RATEColumn) = value
             End Set
         End Property
         
@@ -1330,18 +1361,6 @@ Partial Public Class AdataDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsRATENull() As Boolean
-            Return Me.IsNull(Me.tableacctable.RATEColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetRATENull()
-            Me(Me.tableacctable.RATEColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsVATNull() As Boolean
             Return Me.IsNull(Me.tableacctable.VATColumn)
         End Function
@@ -1386,6 +1405,30 @@ Partial Public Class AdataDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Set_CREDIT_DATENull()
             Me(Me.tableacctable._CREDIT_DATEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Is_ORDER_TYPENull() As Boolean
+            Return Me.IsNull(Me.tableacctable._ORDER_TYPEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Set_ORDER_TYPENull()
+            Me(Me.tableacctable._ORDER_TYPEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsRATENull() As Boolean
+            Return Me.IsNull(Me.tableacctable.RATEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetRATENull()
+            Me(Me.tableacctable.RATEColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1849,33 +1892,37 @@ Namespace AdataDataSetTableAdapters
             tableMapping.ColumnMappings.Add("PARTY-CODE", "PARTY-CODE")
             tableMapping.ColumnMappings.Add("DESCRIPTION", "DESCRIPTION")
             tableMapping.ColumnMappings.Add("QUANTITY", "QUANTITY")
-            tableMapping.ColumnMappings.Add("RATE", "RATE")
             tableMapping.ColumnMappings.Add("VAT", "VAT")
             tableMapping.ColumnMappings.Add("TOT-AMT", "TOT-AMT")
             tableMapping.ColumnMappings.Add("STATUS", "STATUS")
             tableMapping.ColumnMappings.Add("CREDIT-DATE", "CREDIT-DATE")
+            tableMapping.ColumnMappings.Add("ORDER-TYPE", "ORDER-TYPE")
+            tableMapping.ColumnMappings.Add("RATE", "RATE")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM `acctable` WHERE ((`in_srno` = ?) AND ((? = 1 AND `invoice` IS NULL) "& _ 
-                "OR (`invoice` = ?)) AND ((? = 1 AND `p_code` IS NULL) OR (`p_code` = ?)) AND ((?"& _ 
-                " = 1 AND `desc` IS NULL) OR (`desc` = ?)) AND ((? = 1 AND `qty` IS NULL) OR (`qt"& _ 
-                "y` = ?)) AND ((? = 1 AND `rate` IS NULL) OR (`rate` = ?)) AND ((? = 1 AND `vat` "& _ 
-                "IS NULL) OR (`vat` = ?)) AND ((? = 1 AND `tamt` IS NULL) OR (`tamt` = ?)) AND (("& _ 
-                "? = 1 AND `status` IS NULL) OR (`status` = ?)) AND ((? = 1 AND `credit` IS NULL)"& _ 
-                " OR (`credit` = ?)))"
+                "OR (`invoice` = ?)) AND ((? = 1 AND `order_type` IS NULL) OR (`order_type` = ?))"& _ 
+                " AND ((? = 1 AND `p_code` IS NULL) OR (`p_code` = ?)) AND ((? = 1 AND `desc` IS "& _ 
+                "NULL) OR (`desc` = ?)) AND ((? = 1 AND `rate` IS NULL) OR (`rate` = ?)) AND ((? "& _ 
+                "= 1 AND `qty` IS NULL) OR (`qty` = ?)) AND ((? = 1 AND `vat` IS NULL) OR (`vat` "& _ 
+                "= ?)) AND ((? = 1 AND `tamt` IS NULL) OR (`tamt` = ?)) AND ((? = 1 AND `status` "& _ 
+                "IS NULL) OR (`status` = ?)) AND ((? = 1 AND `credit` IS NULL) OR (`credit` = ?))"& _ 
+                ")"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_SRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SRNO", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_INVOICE-NUM", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "INVOICE-NUM", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_INVOICE-NUM", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "INVOICE-NUM", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ORDER-TYPE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ORDER-TYPE", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ORDER-TYPE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ORDER-TYPE", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_PARTY-CODE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PARTY-CODE", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_PARTY-CODE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PARTY-CODE", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_DESCRIPTION", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DESCRIPTION", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DESCRIPTION", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DESCRIPTION", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RATE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATE", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RATE", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATE", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_QUANTITY", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "QUANTITY", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_QUANTITY", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "QUANTITY", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RATE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATE", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RATE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATE", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_VAT", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "VAT", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_VAT", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "VAT", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_TOT-AMT", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TOT-AMT", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -1886,36 +1933,40 @@ Namespace AdataDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CREDIT-DATE", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CREDIT-DATE", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `acctable` (`in_srno`, `invoice`, `p_code`, `desc`, `qty`, `rate`, `v"& _ 
-                "at`, `tamt`, `status`, `credit`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `acctable` (`in_srno`, `invoice`, `order_type`, `p_code`, `desc`, `ra"& _ 
+                "te`, `qty`, `vat`, `tamt`, `status`, `credit`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?"& _ 
+                ", ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SRNO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("INVOICE-NUM", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "INVOICE-NUM", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ORDER-TYPE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ORDER-TYPE", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PARTY-CODE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PARTY-CODE", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DESCRIPTION", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DESCRIPTION", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RATE", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATE", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("QUANTITY", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "QUANTITY", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RATE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATE", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("VAT", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "VAT", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TOT-AMT", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TOT-AMT", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("STATUS", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CREDIT-DATE", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CREDIT-DATE", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `acctable` SET `in_srno` = ?, `invoice` = ?, `p_code` = ?, `desc` = ?, `qt"& _ 
-                "y` = ?, `rate` = ?, `vat` = ?, `tamt` = ?, `status` = ?, `credit` = ? WHERE ((`i"& _ 
-                "n_srno` = ?) AND ((? = 1 AND `invoice` IS NULL) OR (`invoice` = ?)) AND ((? = 1 "& _ 
-                "AND `p_code` IS NULL) OR (`p_code` = ?)) AND ((? = 1 AND `desc` IS NULL) OR (`de"& _ 
-                "sc` = ?)) AND ((? = 1 AND `qty` IS NULL) OR (`qty` = ?)) AND ((? = 1 AND `rate` "& _ 
-                "IS NULL) OR (`rate` = ?)) AND ((? = 1 AND `vat` IS NULL) OR (`vat` = ?)) AND ((?"& _ 
-                " = 1 AND `tamt` IS NULL) OR (`tamt` = ?)) AND ((? = 1 AND `status` IS NULL) OR ("& _ 
-                "`status` = ?)) AND ((? = 1 AND `credit` IS NULL) OR (`credit` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `acctable` SET `in_srno` = ?, `invoice` = ?, `order_type` = ?, `p_code` = "& _ 
+                "?, `desc` = ?, `rate` = ?, `qty` = ?, `vat` = ?, `tamt` = ?, `status` = ?, `cred"& _ 
+                "it` = ? WHERE ((`in_srno` = ?) AND ((? = 1 AND `invoice` IS NULL) OR (`invoice` "& _ 
+                "= ?)) AND ((? = 1 AND `order_type` IS NULL) OR (`order_type` = ?)) AND ((? = 1 A"& _ 
+                "ND `p_code` IS NULL) OR (`p_code` = ?)) AND ((? = 1 AND `desc` IS NULL) OR (`des"& _ 
+                "c` = ?)) AND ((? = 1 AND `rate` IS NULL) OR (`rate` = ?)) AND ((? = 1 AND `qty` "& _ 
+                "IS NULL) OR (`qty` = ?)) AND ((? = 1 AND `vat` IS NULL) OR (`vat` = ?)) AND ((? "& _ 
+                "= 1 AND `tamt` IS NULL) OR (`tamt` = ?)) AND ((? = 1 AND `status` IS NULL) OR (`"& _ 
+                "status` = ?)) AND ((? = 1 AND `credit` IS NULL) OR (`credit` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SRNO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("INVOICE-NUM", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "INVOICE-NUM", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ORDER-TYPE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ORDER-TYPE", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PARTY-CODE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PARTY-CODE", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DESCRIPTION", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DESCRIPTION", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RATE", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATE", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("QUANTITY", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "QUANTITY", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RATE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATE", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("VAT", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "VAT", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TOT-AMT", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TOT-AMT", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("STATUS", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -1923,14 +1974,16 @@ Namespace AdataDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_SRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SRNO", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_INVOICE-NUM", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "INVOICE-NUM", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_INVOICE-NUM", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "INVOICE-NUM", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ORDER-TYPE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ORDER-TYPE", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ORDER-TYPE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ORDER-TYPE", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_PARTY-CODE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PARTY-CODE", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_PARTY-CODE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PARTY-CODE", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_DESCRIPTION", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DESCRIPTION", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DESCRIPTION", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DESCRIPTION", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RATE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATE", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RATE", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATE", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_QUANTITY", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "QUANTITY", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_QUANTITY", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "QUANTITY", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RATE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATE", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RATE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATE", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_VAT", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "VAT", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_VAT", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "VAT", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_TOT-AMT", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TOT-AMT", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -1954,10 +2007,10 @@ Namespace AdataDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        in_srno AS SRNO, invoice AS [INVOICE-NUM], p_code AS [PARTY-CODE], "& _ 
-                "[desc] AS DESCRIPTION, qty AS QUANTITY, rate AS RATE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                        "& _ 
-                " vat AS VAT, tamt AS [TOT-AMT], status AS STATUS, credit AS [CREDIT-DATE]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM "& _ 
-                "           acctable"
+            Me._commandCollection(0).CommandText = "SELECT        in_srno AS SRNO, invoice AS [INVOICE-NUM], order_type AS [ORDER-TYP"& _ 
+                "E], p_code AS [PARTY-CODE], [desc] AS DESCRIPTION, rate AS RATE, qty AS QUANTITY"& _ 
+                ", "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         vat AS VAT, tamt AS [TOT-AMT], status AS STATUS, cr"& _ 
+                "edit AS [CREDIT-DATE]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            acctable"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2017,38 +2070,44 @@ Namespace AdataDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_SRNO As Integer, ByVal _Original_INVOICE_NUM As Integer, ByVal _Original_PARTY_CODE As String, ByVal Original_DESCRIPTION As String, ByVal Original_QUANTITY As Integer, ByVal Original_RATE As Integer, ByVal Original_VAT As Double, ByVal _Original_TOT_AMT As Double, ByVal Original_STATUS As String, ByVal _Original_CREDIT_DATE As Date) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_SRNO As Integer, ByVal _Original_INVOICE_NUM As Integer, ByVal _Original_ORDER_TYPE As String, ByVal _Original_PARTY_CODE As String, ByVal Original_DESCRIPTION As String, ByVal Original_RATE As Double, ByVal Original_QUANTITY As Integer, ByVal Original_VAT As Double, ByVal _Original_TOT_AMT As Double, ByVal Original_STATUS As String, ByVal _Original_CREDIT_DATE As Date) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_SRNO,Integer)
             Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
             Me.Adapter.DeleteCommand.Parameters(2).Value = CType(_Original_INVOICE_NUM,Integer)
+            If (_Original_ORDER_TYPE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("_Original_ORDER_TYPE")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(_Original_ORDER_TYPE,String)
+            End If
             If (_Original_PARTY_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("_Original_PARTY_CODE")
             Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(_Original_PARTY_CODE,String)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(_Original_PARTY_CODE,String)
             End If
             If (Original_DESCRIPTION Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_DESCRIPTION")
             Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_DESCRIPTION,String)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_DESCRIPTION,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-            Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_QUANTITY,Integer)
             Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-            Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_RATE,Integer)
+            Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_RATE,Double)
             Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-            Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_VAT,Double)
+            Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_QUANTITY,Integer)
             Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-            Me.Adapter.DeleteCommand.Parameters(14).Value = CType(_Original_TOT_AMT,Double)
+            Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_VAT,Double)
+            Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(16).Value = CType(_Original_TOT_AMT,Double)
             If (Original_STATUS Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_STATUS")
             Else
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_STATUS,String)
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_STATUS,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
-            Me.Adapter.DeleteCommand.Parameters(18).Value = CType(_Original_CREDIT_DATE,Date)
+            Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(20).Value = CType(_Original_CREDIT_DATE,Date)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2068,29 +2127,34 @@ Namespace AdataDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal SRNO As Integer, ByVal _INVOICE_NUM As Integer, ByVal _PARTY_CODE As String, ByVal DESCRIPTION As String, ByVal QUANTITY As Integer, ByVal RATE As Integer, ByVal VAT As Double, ByVal _TOT_AMT As Double, ByVal STATUS As String, ByVal _CREDIT_DATE As Date) As Integer
+        Public Overloads Overridable Function Insert(ByVal SRNO As Integer, ByVal _INVOICE_NUM As Integer, ByVal _ORDER_TYPE As String, ByVal _PARTY_CODE As String, ByVal DESCRIPTION As String, ByVal RATE As Double, ByVal QUANTITY As Integer, ByVal VAT As Double, ByVal _TOT_AMT As Double, ByVal STATUS As String, ByVal _CREDIT_DATE As Date) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(SRNO,Integer)
             Me.Adapter.InsertCommand.Parameters(1).Value = CType(_INVOICE_NUM,Integer)
+            If (_ORDER_TYPE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("_ORDER_TYPE")
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(_ORDER_TYPE,String)
+            End If
             If (_PARTY_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("_PARTY_CODE")
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(_PARTY_CODE,String)
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(_PARTY_CODE,String)
             End If
             If (DESCRIPTION Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("DESCRIPTION")
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(DESCRIPTION,String)
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(DESCRIPTION,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(4).Value = CType(QUANTITY,Integer)
-            Me.Adapter.InsertCommand.Parameters(5).Value = CType(RATE,Integer)
-            Me.Adapter.InsertCommand.Parameters(6).Value = CType(VAT,Double)
-            Me.Adapter.InsertCommand.Parameters(7).Value = CType(_TOT_AMT,Double)
+            Me.Adapter.InsertCommand.Parameters(5).Value = CType(RATE,Double)
+            Me.Adapter.InsertCommand.Parameters(6).Value = CType(QUANTITY,Integer)
+            Me.Adapter.InsertCommand.Parameters(7).Value = CType(VAT,Double)
+            Me.Adapter.InsertCommand.Parameters(8).Value = CType(_TOT_AMT,Double)
             If (STATUS Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("STATUS")
             Else
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(STATUS,String)
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(STATUS,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(9).Value = CType(_CREDIT_DATE,Date)
+            Me.Adapter.InsertCommand.Parameters(10).Value = CType(_CREDIT_DATE,Date)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2113,77 +2177,90 @@ Namespace AdataDataSetTableAdapters
         Public Overloads Overridable Function Update( _
                     ByVal SRNO As Integer,  _
                     ByVal _INVOICE_NUM As Integer,  _
+                    ByVal _ORDER_TYPE As String,  _
                     ByVal _PARTY_CODE As String,  _
                     ByVal DESCRIPTION As String,  _
+                    ByVal RATE As Double,  _
                     ByVal QUANTITY As Integer,  _
-                    ByVal RATE As Integer,  _
                     ByVal VAT As Double,  _
                     ByVal _TOT_AMT As Double,  _
                     ByVal STATUS As String,  _
                     ByVal _CREDIT_DATE As Date,  _
                     ByVal Original_SRNO As Integer,  _
                     ByVal _Original_INVOICE_NUM As Integer,  _
+                    ByVal _Original_ORDER_TYPE As String,  _
                     ByVal _Original_PARTY_CODE As String,  _
                     ByVal Original_DESCRIPTION As String,  _
+                    ByVal Original_RATE As Double,  _
                     ByVal Original_QUANTITY As Integer,  _
-                    ByVal Original_RATE As Integer,  _
                     ByVal Original_VAT As Double,  _
                     ByVal _Original_TOT_AMT As Double,  _
                     ByVal Original_STATUS As String,  _
                     ByVal _Original_CREDIT_DATE As Date) As Integer
             Me.Adapter.UpdateCommand.Parameters(0).Value = CType(SRNO,Integer)
             Me.Adapter.UpdateCommand.Parameters(1).Value = CType(_INVOICE_NUM,Integer)
+            If (_ORDER_TYPE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("_ORDER_TYPE")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(_ORDER_TYPE,String)
+            End If
             If (_PARTY_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("_PARTY_CODE")
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(_PARTY_CODE,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(_PARTY_CODE,String)
             End If
             If (DESCRIPTION Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("DESCRIPTION")
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(DESCRIPTION,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(DESCRIPTION,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(QUANTITY,Integer)
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(RATE,Integer)
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(VAT,Double)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(_TOT_AMT,Double)
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(RATE,Double)
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(QUANTITY,Integer)
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(VAT,Double)
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(_TOT_AMT,Double)
             If (STATUS Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("STATUS")
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(STATUS,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(STATUS,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(_CREDIT_DATE,Date)
-            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_SRNO,Integer)
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(_Original_INVOICE_NUM,Integer)
+            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(_CREDIT_DATE,Date)
+            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_SRNO,Integer)
+            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(_Original_INVOICE_NUM,Integer)
+            If (_Original_ORDER_TYPE Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("_Original_ORDER_TYPE")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(_Original_ORDER_TYPE,String)
+            End If
             If (_Original_PARTY_CODE Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("_Original_PARTY_CODE")
             Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(_Original_PARTY_CODE,String)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(_Original_PARTY_CODE,String)
             End If
             If (Original_DESCRIPTION Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_DESCRIPTION")
             Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_DESCRIPTION,String)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_DESCRIPTION,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-            Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_QUANTITY,Integer)
-            Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-            Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_RATE,Integer)
-            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_VAT,Double)
-            Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
-            Me.Adapter.UpdateCommand.Parameters(24).Value = CType(_Original_TOT_AMT,Double)
+            Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_RATE,Double)
+            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_QUANTITY,Integer)
+            Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_VAT,Double)
+            Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(27).Value = CType(_Original_TOT_AMT,Double)
             If (Original_STATUS Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_STATUS")
             Else
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_STATUS,String)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_STATUS,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
-            Me.Adapter.UpdateCommand.Parameters(28).Value = CType(_Original_CREDIT_DATE,Date)
+            Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(31).Value = CType(_Original_CREDIT_DATE,Date)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2205,25 +2282,27 @@ Namespace AdataDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update( _
                     ByVal _INVOICE_NUM As Integer,  _
+                    ByVal _ORDER_TYPE As String,  _
                     ByVal _PARTY_CODE As String,  _
                     ByVal DESCRIPTION As String,  _
+                    ByVal RATE As Double,  _
                     ByVal QUANTITY As Integer,  _
-                    ByVal RATE As Integer,  _
                     ByVal VAT As Double,  _
                     ByVal _TOT_AMT As Double,  _
                     ByVal STATUS As String,  _
                     ByVal _CREDIT_DATE As Date,  _
                     ByVal Original_SRNO As Integer,  _
                     ByVal _Original_INVOICE_NUM As Integer,  _
+                    ByVal _Original_ORDER_TYPE As String,  _
                     ByVal _Original_PARTY_CODE As String,  _
                     ByVal Original_DESCRIPTION As String,  _
+                    ByVal Original_RATE As Double,  _
                     ByVal Original_QUANTITY As Integer,  _
-                    ByVal Original_RATE As Integer,  _
                     ByVal Original_VAT As Double,  _
                     ByVal _Original_TOT_AMT As Double,  _
                     ByVal Original_STATUS As String,  _
                     ByVal _Original_CREDIT_DATE As Date) As Integer
-            Return Me.Update(Original_SRNO, _INVOICE_NUM, _PARTY_CODE, DESCRIPTION, QUANTITY, RATE, VAT, _TOT_AMT, STATUS, _CREDIT_DATE, Original_SRNO, _Original_INVOICE_NUM, _Original_PARTY_CODE, Original_DESCRIPTION, Original_QUANTITY, Original_RATE, Original_VAT, _Original_TOT_AMT, Original_STATUS, _Original_CREDIT_DATE)
+            Return Me.Update(Original_SRNO, _INVOICE_NUM, _ORDER_TYPE, _PARTY_CODE, DESCRIPTION, RATE, QUANTITY, VAT, _TOT_AMT, STATUS, _CREDIT_DATE, Original_SRNO, _Original_INVOICE_NUM, _Original_ORDER_TYPE, _Original_PARTY_CODE, Original_DESCRIPTION, Original_RATE, Original_QUANTITY, Original_VAT, _Original_TOT_AMT, Original_STATUS, _Original_CREDIT_DATE)
         End Function
     End Class
     

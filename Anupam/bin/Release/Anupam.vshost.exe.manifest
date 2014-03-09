@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Anupam.exe" size="327680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Anupam.exe" size="332288">
       <assemblyIdentity name="Anupam" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>PznLkh3ws+uGjk5q0Z88Tso63wo=</dsig:DigestValue>
+        <dsig:DigestValue>NUNrlF9QPwJD5PurF9JV1H/tIao=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -78,7 +78,7 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Office.dll" size="416544">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="office.dll" size="416544">
       <assemblyIdentity name="office" version="12.0.0.0" publicKeyToken="71E9BCE111E9429C" language="neutral" />
       <hash>
         <dsig:Transforms>
@@ -104,7 +104,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>oDUUodsQ1MigJfrl3WpcLh23XQo=</dsig:DigestValue>
+      <dsig:DigestValue>s5ESrmE1wQYzvw0u9G5Rr/U+Qg4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Anupam.exe.config" size="1623">

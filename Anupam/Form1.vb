@@ -158,7 +158,7 @@ Public Class MainForm
                 'Dim obj_no As Integer = CInt(Label30.Text)
 
 
-                Dim ref_no, credit, p_name, p_code, p_addr, desc, ctct, status, amt_type, c_date, amt_date, v_code, client_name As String
+                Dim ref_no, credit, p_name, p_code, p_addr, desc, ctct, status, amt_type, c_date, amt_date, v_code, client_name, order_type As String
                 Dim qty As Integer
                 Dim vat, rate As Decimal
                 Dim tamt, amt As Double
@@ -219,9 +219,16 @@ Public Class MainForm
                     amt_date = DateTimePicker2.Text.ToString
                 End If
 
+                'Buy or Sell
+                If RadioButton5.Checked = True Then
+                    order_type = "Buy"
+                Else
+                    order_type = "Sell"
+                End If
+
                 'invoice generation
 
-                strsql2 = "insert into acctable values(" & in_srno & "," & invoice & ",'" & p_code & "','" & desc & "'," & qty & "," & rate & "," & vat & "," & tamt & ",'" & status & "','" & c_date & "','" & amt_type & "','" & ref_no & "'," & amt & ",'" & amt_date & "','" & credit & "')"
+                strsql2 = "insert into acctable values(" & in_srno & "," & invoice & ",'" & p_code & "','" & desc & "'," & qty & "," & rate & "," & vat & "," & tamt & ",'" & status & "','" & c_date & "','" & amt_type & "','" & ref_no & "'," & amt & ",'" & amt_date & "','" & credit & "','NA','" & order_type & "')"
 
                 Dim x2 As Integer
                 Dim sql2 As New OleDbCommand(strsql2, con)

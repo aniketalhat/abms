@@ -94,6 +94,8 @@ Partial Class MainForm
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.Label29 = New System.Windows.Forms.Label()
@@ -158,6 +160,24 @@ Partial Class MainForm
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.bank = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SRNODataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.INVOICEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PARTYCODEDataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DESCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QTYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VATDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalAMTDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.STATUSDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CreditDATEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AmtTYPEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.REFNODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AMTDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AMTDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CreditDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BankNAMEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ORDERTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AcctableBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.AdataDataSet1 = New Anupam.AdataDataSet1()
         Me.ExpBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -187,15 +207,6 @@ Partial Class MainForm
         Me.AcctableTableAdapter1 = New Anupam.AdataDataSet1TableAdapters.acctableTableAdapter()
         Me.AtableTableAdapter = New Anupam.AdataDataSetTableAdapters.atableTableAdapter()
         Me.AcctableTableAdapter = New Anupam.AdataDataSetTableAdapters.acctableTableAdapter()
-        Me.PcodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.bank = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.InvoiceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AmttypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RefnoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AmtDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AmtdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage2.SuspendLayout()
         CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AdataDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -264,20 +275,36 @@ Partial Class MainForm
         '
         'DataGrid1
         '
+        Me.DataGrid1.AlternatingBackColor = System.Drawing.Color.White
         Me.DataGrid1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGrid1.CaptionFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGrid1.BackColor = System.Drawing.Color.White
+        Me.DataGrid1.BackgroundColor = System.Drawing.Color.Ivory
+        Me.DataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.DataGrid1.CaptionBackColor = System.Drawing.Color.DarkSlateBlue
+        Me.DataGrid1.CaptionForeColor = System.Drawing.Color.Lavender
         Me.DataGrid1.CaptionText = "CREDIT-DATABASE"
         Me.DataGrid1.CaptionVisible = False
         Me.DataGrid1.DataMember = "atable"
         Me.DataGrid1.DataSource = Me.AdataDataSet
-        Me.DataGrid1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText
-        Me.DataGrid1.Location = New System.Drawing.Point(74, 82)
+        Me.DataGrid1.FlatMode = True
+        Me.DataGrid1.Font = New System.Drawing.Font("Tahoma", 8.0!)
+        Me.DataGrid1.ForeColor = System.Drawing.Color.Black
+        Me.DataGrid1.GridLineColor = System.Drawing.Color.Wheat
+        Me.DataGrid1.HeaderBackColor = System.Drawing.Color.CadetBlue
+        Me.DataGrid1.HeaderFont = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.DataGrid1.HeaderForeColor = System.Drawing.Color.Black
+        Me.DataGrid1.LinkColor = System.Drawing.Color.DarkSlateBlue
+        Me.DataGrid1.Location = New System.Drawing.Point(27, 82)
         Me.DataGrid1.Name = "DataGrid1"
+        Me.DataGrid1.ParentRowsBackColor = System.Drawing.Color.Ivory
+        Me.DataGrid1.ParentRowsForeColor = System.Drawing.Color.Black
+        Me.DataGrid1.PreferredColumnWidth = 80
         Me.DataGrid1.ReadOnly = True
-        Me.DataGrid1.Size = New System.Drawing.Size(845, 461)
+        Me.DataGrid1.SelectionBackColor = System.Drawing.Color.Wheat
+        Me.DataGrid1.SelectionForeColor = System.Drawing.Color.DarkSlateBlue
+        Me.DataGrid1.Size = New System.Drawing.Size(946, 461)
         Me.DataGrid1.TabIndex = 0
         '
         'AdataDataSet
@@ -347,11 +374,11 @@ Partial Class MainForm
         '
         Me.Label37.AutoSize = True
         Me.Label37.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label37.Location = New System.Drawing.Point(12, 163)
+        Me.Label37.Location = New System.Drawing.Point(12, 172)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(156, 15)
         Me.Label37.TabIndex = 111
-        Me.Label37.Text = "Version: 0.2 Date: 14-02-14"
+        Me.Label37.Text = "Version: 0.3 Date: 07-03-14"
         '
         'PictureBox1
         '
@@ -971,6 +998,8 @@ Partial Class MainForm
         'GroupBox1
         '
         Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.GroupBox1.Controls.Add(Me.RadioButton6)
+        Me.GroupBox1.Controls.Add(Me.RadioButton5)
         Me.GroupBox1.Controls.Add(Me.Button9)
         Me.GroupBox1.Controls.Add(Me.ComboBox3)
         Me.GroupBox1.Controls.Add(Me.Label29)
@@ -986,6 +1015,28 @@ Partial Class MainForm
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Step-3 Purchase Order"
         '
+        'RadioButton6
+        '
+        Me.RadioButton6.AutoSize = True
+        Me.RadioButton6.Checked = True
+        Me.RadioButton6.Location = New System.Drawing.Point(181, 25)
+        Me.RadioButton6.Name = "RadioButton6"
+        Me.RadioButton6.Size = New System.Drawing.Size(45, 19)
+        Me.RadioButton6.TabIndex = 115
+        Me.RadioButton6.TabStop = True
+        Me.RadioButton6.Text = "Sell"
+        Me.RadioButton6.UseVisualStyleBackColor = True
+        '
+        'RadioButton5
+        '
+        Me.RadioButton5.AutoSize = True
+        Me.RadioButton5.Location = New System.Drawing.Point(22, 25)
+        Me.RadioButton5.Name = "RadioButton5"
+        Me.RadioButton5.Size = New System.Drawing.Size(47, 19)
+        Me.RadioButton5.TabIndex = 114
+        Me.RadioButton5.Text = "Buy"
+        Me.RadioButton5.UseVisualStyleBackColor = True
+        '
         'Button9
         '
         Me.Button9.Location = New System.Drawing.Point(114, 163)
@@ -1000,7 +1051,7 @@ Partial Class MainForm
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.ItemHeight = 15
-        Me.ComboBox3.Location = New System.Drawing.Point(181, 34)
+        Me.ComboBox3.Location = New System.Drawing.Point(181, 53)
         Me.ComboBox3.MaxDropDownItems = 5
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(48, 23)
@@ -1009,7 +1060,7 @@ Partial Class MainForm
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(19, 42)
+        Me.Label29.Location = New System.Drawing.Point(19, 56)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(110, 15)
         Me.Label29.TabIndex = 58
@@ -1019,7 +1070,7 @@ Partial Class MainForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label1.Location = New System.Drawing.Point(19, 87)
+        Me.Label1.Location = New System.Drawing.Point(19, 91)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(97, 15)
         Me.Label1.TabIndex = 6
@@ -1027,7 +1078,7 @@ Partial Class MainForm
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(181, 79)
+        Me.TextBox1.Location = New System.Drawing.Point(181, 88)
         Me.TextBox1.MaxLength = 20
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
@@ -1037,7 +1088,7 @@ Partial Class MainForm
         '
         'TextBox11
         '
-        Me.TextBox11.Location = New System.Drawing.Point(181, 122)
+        Me.TextBox11.Location = New System.Drawing.Point(181, 124)
         Me.TextBox11.MaxLength = 10
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(132, 23)
@@ -1047,7 +1098,7 @@ Partial Class MainForm
         '
         Me.Label20.AutoSize = True
         Me.Label20.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label20.Location = New System.Drawing.Point(19, 130)
+        Me.Label20.Location = New System.Drawing.Point(19, 127)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(54, 15)
         Me.Label20.TabIndex = 113
@@ -1647,7 +1698,7 @@ Partial Class MainForm
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PcodeDataGridViewTextBoxColumn, Me.bank, Me.InvoiceDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn, Me.AmttypeDataGridViewTextBoxColumn, Me.RefnoDataGridViewTextBoxColumn, Me.AmtDataGridViewTextBoxColumn, Me.AmtdateDataGridViewTextBoxColumn, Me.desc})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.bank, Me.desc, Me.SRNODataGridViewTextBoxColumn1, Me.INVOICEDataGridViewTextBoxColumn, Me.PARTYCODEDataGridViewTextBoxColumn3, Me.DESCDataGridViewTextBoxColumn, Me.QTYDataGridViewTextBoxColumn, Me.VATDataGridViewTextBoxColumn, Me.TotalAMTDataGridViewTextBoxColumn, Me.STATUSDataGridViewTextBoxColumn, Me.CreditDATEDataGridViewTextBoxColumn, Me.AmtTYPEDataGridViewTextBoxColumn, Me.REFNODataGridViewTextBoxColumn, Me.AMTDataGridViewTextBoxColumn, Me.AMTDateDataGridViewTextBoxColumn, Me.CreditDataGridViewTextBoxColumn, Me.BankNAMEDataGridViewTextBoxColumn, Me.ORDERTypeDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.AcctableBindingSource1
         Me.DataGridView1.Location = New System.Drawing.Point(87, 62)
         Me.DataGridView1.Name = "DataGridView1"
@@ -1655,6 +1706,132 @@ Partial Class MainForm
         Me.DataGridView1.RowHeadersWidth = 15
         Me.DataGridView1.Size = New System.Drawing.Size(817, 280)
         Me.DataGridView1.TabIndex = 2
+        '
+        'bank
+        '
+        Me.bank.DataPropertyName = "bank"
+        Me.bank.HeaderText = "BANK"
+        Me.bank.Name = "bank"
+        Me.bank.ReadOnly = True
+        '
+        'desc
+        '
+        Me.desc.DataPropertyName = "desc"
+        Me.desc.HeaderText = "DESCRIPTION"
+        Me.desc.Name = "desc"
+        Me.desc.ReadOnly = True
+        '
+        'SRNODataGridViewTextBoxColumn1
+        '
+        Me.SRNODataGridViewTextBoxColumn1.DataPropertyName = "SRNO"
+        Me.SRNODataGridViewTextBoxColumn1.HeaderText = "SRNO"
+        Me.SRNODataGridViewTextBoxColumn1.Name = "SRNODataGridViewTextBoxColumn1"
+        Me.SRNODataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'INVOICEDataGridViewTextBoxColumn
+        '
+        Me.INVOICEDataGridViewTextBoxColumn.DataPropertyName = "INVOICE"
+        Me.INVOICEDataGridViewTextBoxColumn.HeaderText = "INVOICE"
+        Me.INVOICEDataGridViewTextBoxColumn.Name = "INVOICEDataGridViewTextBoxColumn"
+        Me.INVOICEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PARTYCODEDataGridViewTextBoxColumn3
+        '
+        Me.PARTYCODEDataGridViewTextBoxColumn3.DataPropertyName = "PARTYCODE"
+        Me.PARTYCODEDataGridViewTextBoxColumn3.HeaderText = "PARTYCODE"
+        Me.PARTYCODEDataGridViewTextBoxColumn3.Name = "PARTYCODEDataGridViewTextBoxColumn3"
+        Me.PARTYCODEDataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DESCDataGridViewTextBoxColumn
+        '
+        Me.DESCDataGridViewTextBoxColumn.DataPropertyName = "DESC"
+        Me.DESCDataGridViewTextBoxColumn.HeaderText = "DESC"
+        Me.DESCDataGridViewTextBoxColumn.Name = "DESCDataGridViewTextBoxColumn"
+        Me.DESCDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'QTYDataGridViewTextBoxColumn
+        '
+        Me.QTYDataGridViewTextBoxColumn.DataPropertyName = "QTY"
+        Me.QTYDataGridViewTextBoxColumn.HeaderText = "QTY"
+        Me.QTYDataGridViewTextBoxColumn.Name = "QTYDataGridViewTextBoxColumn"
+        Me.QTYDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'VATDataGridViewTextBoxColumn
+        '
+        Me.VATDataGridViewTextBoxColumn.DataPropertyName = "VAT"
+        Me.VATDataGridViewTextBoxColumn.HeaderText = "VAT"
+        Me.VATDataGridViewTextBoxColumn.Name = "VATDataGridViewTextBoxColumn"
+        Me.VATDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TotalAMTDataGridViewTextBoxColumn
+        '
+        Me.TotalAMTDataGridViewTextBoxColumn.DataPropertyName = "TotalAMT"
+        Me.TotalAMTDataGridViewTextBoxColumn.HeaderText = "TotalAMT"
+        Me.TotalAMTDataGridViewTextBoxColumn.Name = "TotalAMTDataGridViewTextBoxColumn"
+        Me.TotalAMTDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'STATUSDataGridViewTextBoxColumn
+        '
+        Me.STATUSDataGridViewTextBoxColumn.DataPropertyName = "STATUS"
+        Me.STATUSDataGridViewTextBoxColumn.HeaderText = "STATUS"
+        Me.STATUSDataGridViewTextBoxColumn.Name = "STATUSDataGridViewTextBoxColumn"
+        Me.STATUSDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CreditDATEDataGridViewTextBoxColumn
+        '
+        Me.CreditDATEDataGridViewTextBoxColumn.DataPropertyName = "CreditDATE"
+        Me.CreditDATEDataGridViewTextBoxColumn.HeaderText = "CreditDATE"
+        Me.CreditDATEDataGridViewTextBoxColumn.Name = "CreditDATEDataGridViewTextBoxColumn"
+        Me.CreditDATEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'AmtTYPEDataGridViewTextBoxColumn
+        '
+        Me.AmtTYPEDataGridViewTextBoxColumn.DataPropertyName = "AmtTYPE"
+        Me.AmtTYPEDataGridViewTextBoxColumn.HeaderText = "AmtTYPE"
+        Me.AmtTYPEDataGridViewTextBoxColumn.Name = "AmtTYPEDataGridViewTextBoxColumn"
+        Me.AmtTYPEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'REFNODataGridViewTextBoxColumn
+        '
+        Me.REFNODataGridViewTextBoxColumn.DataPropertyName = "REFNO"
+        Me.REFNODataGridViewTextBoxColumn.HeaderText = "REFNO"
+        Me.REFNODataGridViewTextBoxColumn.Name = "REFNODataGridViewTextBoxColumn"
+        Me.REFNODataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'AMTDataGridViewTextBoxColumn
+        '
+        Me.AMTDataGridViewTextBoxColumn.DataPropertyName = "AMT"
+        Me.AMTDataGridViewTextBoxColumn.HeaderText = "AMT"
+        Me.AMTDataGridViewTextBoxColumn.Name = "AMTDataGridViewTextBoxColumn"
+        Me.AMTDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'AMTDateDataGridViewTextBoxColumn
+        '
+        Me.AMTDateDataGridViewTextBoxColumn.DataPropertyName = "AMTDate"
+        Me.AMTDateDataGridViewTextBoxColumn.HeaderText = "AMTDate"
+        Me.AMTDateDataGridViewTextBoxColumn.Name = "AMTDateDataGridViewTextBoxColumn"
+        Me.AMTDateDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CreditDataGridViewTextBoxColumn
+        '
+        Me.CreditDataGridViewTextBoxColumn.DataPropertyName = "Credit"
+        Me.CreditDataGridViewTextBoxColumn.HeaderText = "Credit"
+        Me.CreditDataGridViewTextBoxColumn.Name = "CreditDataGridViewTextBoxColumn"
+        Me.CreditDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'BankNAMEDataGridViewTextBoxColumn
+        '
+        Me.BankNAMEDataGridViewTextBoxColumn.DataPropertyName = "BankNAME"
+        Me.BankNAMEDataGridViewTextBoxColumn.HeaderText = "BankNAME"
+        Me.BankNAMEDataGridViewTextBoxColumn.Name = "BankNAMEDataGridViewTextBoxColumn"
+        Me.BankNAMEDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ORDERTypeDataGridViewTextBoxColumn
+        '
+        Me.ORDERTypeDataGridViewTextBoxColumn.DataPropertyName = "ORDERType"
+        Me.ORDERTypeDataGridViewTextBoxColumn.HeaderText = "ORDERType"
+        Me.ORDERTypeDataGridViewTextBoxColumn.Name = "ORDERTypeDataGridViewTextBoxColumn"
+        Me.ORDERTypeDataGridViewTextBoxColumn.ReadOnly = True
         '
         'AcctableBindingSource1
         '
@@ -1855,69 +2032,6 @@ Partial Class MainForm
         'AcctableTableAdapter
         '
         Me.AcctableTableAdapter.ClearBeforeFill = True
-        '
-        'PcodeDataGridViewTextBoxColumn
-        '
-        Me.PcodeDataGridViewTextBoxColumn.DataPropertyName = "p_code"
-        Me.PcodeDataGridViewTextBoxColumn.HeaderText = "PARTY-CODE"
-        Me.PcodeDataGridViewTextBoxColumn.Name = "PcodeDataGridViewTextBoxColumn"
-        Me.PcodeDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'bank
-        '
-        Me.bank.DataPropertyName = "bank"
-        Me.bank.HeaderText = "BANK"
-        Me.bank.Name = "bank"
-        Me.bank.ReadOnly = True
-        '
-        'InvoiceDataGridViewTextBoxColumn
-        '
-        Me.InvoiceDataGridViewTextBoxColumn.DataPropertyName = "invoice"
-        Me.InvoiceDataGridViewTextBoxColumn.HeaderText = "INVOICE"
-        Me.InvoiceDataGridViewTextBoxColumn.Name = "InvoiceDataGridViewTextBoxColumn"
-        Me.InvoiceDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'StatusDataGridViewTextBoxColumn
-        '
-        Me.StatusDataGridViewTextBoxColumn.DataPropertyName = "status"
-        Me.StatusDataGridViewTextBoxColumn.HeaderText = "STATUS"
-        Me.StatusDataGridViewTextBoxColumn.Name = "StatusDataGridViewTextBoxColumn"
-        Me.StatusDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'AmttypeDataGridViewTextBoxColumn
-        '
-        Me.AmttypeDataGridViewTextBoxColumn.DataPropertyName = "amt_type"
-        Me.AmttypeDataGridViewTextBoxColumn.HeaderText = "AMOUNT-TYPE"
-        Me.AmttypeDataGridViewTextBoxColumn.Name = "AmttypeDataGridViewTextBoxColumn"
-        Me.AmttypeDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'RefnoDataGridViewTextBoxColumn
-        '
-        Me.RefnoDataGridViewTextBoxColumn.DataPropertyName = "ref_no"
-        Me.RefnoDataGridViewTextBoxColumn.HeaderText = "REFERENCE-NUM"
-        Me.RefnoDataGridViewTextBoxColumn.Name = "RefnoDataGridViewTextBoxColumn"
-        Me.RefnoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'AmtDataGridViewTextBoxColumn
-        '
-        Me.AmtDataGridViewTextBoxColumn.DataPropertyName = "amt"
-        Me.AmtDataGridViewTextBoxColumn.HeaderText = "AMOUNT-PAID"
-        Me.AmtDataGridViewTextBoxColumn.Name = "AmtDataGridViewTextBoxColumn"
-        Me.AmtDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'AmtdateDataGridViewTextBoxColumn
-        '
-        Me.AmtdateDataGridViewTextBoxColumn.DataPropertyName = "amt_date"
-        Me.AmtdateDataGridViewTextBoxColumn.HeaderText = "AMOUNT-DATE"
-        Me.AmtdateDataGridViewTextBoxColumn.Name = "AmtdateDataGridViewTextBoxColumn"
-        Me.AmtdateDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'desc
-        '
-        Me.desc.DataPropertyName = "desc"
-        Me.desc.HeaderText = "DESCRIPTION"
-        Me.desc.Name = "desc"
-        Me.desc.ReadOnly = True
         '
         'MainForm
         '
@@ -2142,12 +2256,24 @@ Partial Class MainForm
     Friend WithEvents Label49 As System.Windows.Forms.Label
     Friend WithEvents PcodeDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents bank As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents InvoiceDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents StatusDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents AmttypeDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents RefnoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents AmtDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents AmtdateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents desc As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents RadioButton6 As System.Windows.Forms.RadioButton
+    Friend WithEvents RadioButton5 As System.Windows.Forms.RadioButton
+    Friend WithEvents SRNODataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PARTYCODEDataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DESCDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents QTYDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents VATDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TotalAMTDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CreditDATEDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CreditDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BankNAMEDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ORDERTypeDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents INVOICEDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents STATUSDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents AmtTYPEDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents REFNODataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents AMTDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents AMTDateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
